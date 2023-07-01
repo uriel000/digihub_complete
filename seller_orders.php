@@ -13,6 +13,7 @@ if(!isset($seller_id)){
 if(isset($_POST['update_order'])){
   $order_update_id = $_POST['order_id'];
   $update_payment = $_POST['update_payment'];
+  echo "<script>console.log(".$update_payment.")</script>";
   mysqli_query($conn, "UPDATE `orders` SET payment_status = '$update_payment' WHERE id = '$order_update_id'") or die("Query failed");
   $message[] = "Payment status has been updated";
 }
@@ -69,8 +70,7 @@ if(isset($_GET['delete'])){
         <form action="" method="post">
           <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id'];?>">
           <select name="update_payment">
-            <option value="" selected disabled><?php echo $fetch_orders['payment_status'];?></option>
-            <option value="pending">Pending</option>
+            <option value="pending" selected>Pending</option>
             <option value="completed">Completed</option>
           </select>
           <input type="submit" value="Update" name="update_order" class="option-btn">
@@ -107,9 +107,8 @@ if(isset($_GET['delete'])){
         <form action="" method="post">
           <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id'];?>">
           <select name="update_payment">
-            <option value="" selected disabled><?php echo $fetch_orders['payment_status'];?></option>
             <option value="pending">Pending</option>
-            <option value="completed">Completed</option>
+            <option value="completed" selected>Completed</option>
           </select>
           <input type="submit" value="Update" name="update_order" class="option-btn">
           <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Delete this order?');" class="delete-btn">Remove</a>
@@ -127,3 +126,4 @@ if(isset($_GET['delete'])){
 </section>
 </body>
 </html>
+
