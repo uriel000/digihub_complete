@@ -50,6 +50,15 @@ section {
   padding: 3rem 2rem;
 }
 
+.status_orders {
+  align-items: center;
+  font-size: 3rem;
+  color: var(--white);
+  text-align: center;
+  padding: 0.3rem;
+  margin: 2rem 0;
+}
+
 .message {
   position: sticky;
   top: 0;

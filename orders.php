@@ -36,7 +36,7 @@ if(!isset($user_id)){
     </div>
 
     <section class="placed-orders">
-        <h1 class="title">Pending orders</h1>
+        <h1 class="status_orders" style="background-color:#ce2029;">Pending orders</h1>
         <div class="box-container">
             <?php
                 $order_query = mysqli_query($conn, "SELECT orders.name, orders.number, orders.email, orders.method, orders.address, orders.product_name, orders.total_products, orders.total_price, orders.placed_on, orders.payment_status, products.image FROM `orders` INNER JOIN `products` ON orders.product_name = products.name WHERE user_id = '$user_id' AND payment_status='pending'") or die("Query failed");
@@ -66,7 +66,7 @@ if(!isset($user_id)){
             ?>
         </div>
 
-         <h1 class="title">Completed orders</h1>
+         <h1 class="status_orders" style="background-color:#b19cd9;">Completed orders</h1>
         <div class="box-container">
             <?php
                 $order_query = mysqli_query($conn, "SELECT orders.name, orders.number, orders.email, orders.method, orders.address, orders.product_name, orders.total_products, orders.total_price, orders.placed_on, orders.payment_status, products.image, products.file_link FROM `orders` INNER JOIN `products` ON orders.product_name = products.name WHERE user_id = '$user_id' AND payment_status='completed'") or die("Query failed");
