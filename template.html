@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <!-- font awesome cdn link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- custom admin css -->
+    <link rel="stylesheet" href="css/admin_style.css" />
+
+    <!-- custom admin js file link -->
+    <script src="js/admin_script.js" defer></script>
+  </head>
+  <body>
+    <?php include 'admin_header.php'?>
+
+
+    <!-- Product CRUD section starts -->
+
+    <section class="add-products">
+
+    <h1 class="title">Shop products</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            <h3>Add product</h3>
+            <input type="text" name="name" class="box" placeholder="Enter product name" required>
+            <input type="number" name="price" class="box" placeholder="Enter product price" required>
+            <input type="text" name="description" class="box" placeholder="Enter product description" required>
+            <select name="category" class="box" required>
+                <option value="ebook">E-Book</option>
+                <option value="audiobook">Audiobook</option>
+                <option value="course">Online Course</option>
+                <option value="software">Software</option>
+                <option value="template">Template</option>
+                <option value="graphic">Graphic and Digital Art</option>
+                <option value="patterns">Patterns and Printables</option>
+                <option value="music">Music and Audio</option>
+                <option value="preset">Photo Preset</option>
+                <option value="font">Font</option>
+                <option value="photography">Photography</option>
+                <option value="video">Video</option>
+                <option value="document">Document</option>
+                <option value="other">Others</option>
+            </select>
+            <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
+            <input type="submit" value="Add product" name="add_product" class="btn">
+        </form>
+    </section>
+
+    <!-- Product CRUD section ends -->
+
+
+
+      </div>
+    </section>
+  </body>
+</html>
