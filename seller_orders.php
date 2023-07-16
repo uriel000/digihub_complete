@@ -21,7 +21,7 @@ if(isset($_POST['update_order'])){
 if(isset($_GET['delete'])){
   $delete_id = $_GET['delete'];
   mysqli_query($conn, "DELETE FROM `orders` WHERE id = '$delete_id'") or die("Query Failed");
-  header("location:admin_orders.php");
+  header("location:seller_orders.php");
 }
 ?>
 <!DOCTYPE html>
@@ -74,7 +74,7 @@ if(isset($_GET['delete'])){
             <option value="completed">Completed</option>
           </select>
           <input type="submit" value="Update" name="update_order" class="option-btn">
-          <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Delete this order?');" class="delete-btn">Remove</a>
+          <a href="seller_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Delete this order?');" class="delete-btn">Remove</a>
         </form>
       </div>
         <?php
@@ -111,7 +111,7 @@ if(isset($_GET['delete'])){
             <option value="completed" selected>Completed</option>
           </select>
           <input type="submit" value="Update" name="update_order" class="option-btn">
-          <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Delete this order?');" class="delete-btn">Remove</a>
+          <a href="seller_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Delete this order?');" class="delete-btn">Remove</a>
         </form>
       </div>
         <?php
